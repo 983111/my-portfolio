@@ -3,673 +3,634 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishwajeet Adkine - Aspiring AI Engineer & Researcher</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <title>KhetiAI Project - Vishwajeet Adkine</title>
     <style>
         :root {
-            /* --- The "Paper & Ink" Palette --- */
-            --bg-color: #FDFBF7;       /* Warm Alabaster - Looks like premium paper */
-            --card-bg: #ffffff;        /* Pure white for contrast */
-            --text-main: #1C1C1C;      /* Soft Charcoal */
-            --text-muted: #555555;     
-            --accent-color: #1a3c34;   /* Deep Forest Green - Professional & Grounded */
-            --accent-light: #e8eceb;   /* Very light green/grey */
-            --border-color: #E5E5E0;
-            
-            --radius: 12px;
-            --shadow-sm: 0 2px 8px rgba(26, 60, 52, 0.04);
-            --shadow-hover: 0 12px 30px rgba(26, 60, 52, 0.08);
+            /* --- Alabaster White / Deep Forest Green Theme --- */
+            --bg-light: #FDFBF7;         /* Alabaster/Warm White Background */
+            --bg-card: #FFFFFF;          /* Pure White Card Background */
+            --text-main: #1C1C1C;        /* Soft Charcoal Text (Very Dark) */
+            --text-dim: #555555;         /* Muted Grey Text */
+            --accent-green: #1a3c34;     /* Deep Forest Green (Primary Accent) */
+            --accent-gold: #FFD700;      /* Gold/Yellow (Secondary Accent/Highlight) */
+            --border: #E5E5E0;           /* Light Border */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
-        /* --- Global Styling --- */
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.65;
-            overflow-x: hidden;
-            /* Subtle architectural grid pattern */
-            background-image: radial-gradient(#d8d6d0 1px, transparent 1px);
-            background-size: 32px 32px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-light); 
+            color: var(--text-main);     
+            line-height: 1.6;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--text-main);
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-        }
-
-        /* --- Link Visibility Styling (CRITICAL FIXES) --- */
+        /* --- Link Visibility Fixes --- */
         a {
-            color: var(--accent-color);
-            transition: color 0.2s, background-color 0.2s, opacity 0.2s;
-            text-decoration: underline;
-            text-decoration-color: var(--accent-color);
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
-            font-weight: 500;
+            color: var(--accent-green);
+            text-decoration: underline; 
+            text-underline-offset: 3px;
+            transition: color 0.3s, background-color 0.3s;
         }
         
-        /* FIX: Ensures visited links retain the accent color and don't turn black/purple */
+        /* FIX: Ensure visited links retain color */
         a:visited {
-            color: var(--accent-color);
-            text-decoration-color: var(--accent-color);
+            color: var(--accent-green);
         }
 
         a:hover {
-            color: var(--text-main);
+            color: var(--text-main); 
             text-decoration-color: var(--text-main);
-            opacity: 1;
         }
 
-        /* Nav links are subtle but visible */
+        /* Nav links are subtle */
         .nav-links a {
+            color: var(--text-dim);
             text-decoration: none;
-            color: var(--text-muted);
+            font-weight: 500;
         }
-        
+
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--text-main);
         }
-        
+
         /* --- Navigation Bar --- */
         nav {
             position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1000px;
-            background: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(12px);
+            top: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.95); 
+            backdrop-filter: blur(8px);
             z-index: 1000;
-            border: 1px solid var(--border-color);
-            border-radius: 50px; 
-            padding: 0.8rem 2rem;
-            box-shadow: var(--shadow-sm);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            border-bottom: 1px solid var(--border);
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-color);
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-green); 
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             list-style: none;
         }
 
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 8rem 2rem 4rem;
         }
-        
-        .hero h1 {
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
+
+        .project-title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-green); 
         }
 
-        .hero h2 {
-            font-size: 1.6rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
-
-        /* --- Social Links --- */
-        .social-links {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
+        .subtitle {
             font-size: 1.5rem;
-            color: var(--text-main);
-            text-decoration: none; 
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
-        }
-
-        /* --- CTA Buttons (Styled for clear action) --- */
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--accent-color);
-            color: #fff;
-            text-decoration: none; /* Remove underline from button */
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--accent-color);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        /* --- Section Layouts --- */
-        section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 2.5rem;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
+            color: var(--text-dim);
             margin-bottom: 3rem;
-            text-align: center;
-            font-weight: 700;
-            border-bottom: 1px solid var(--border-color);
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--text-main); 
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
             padding-bottom: 0.5rem;
         }
 
-        .grid {
+        .card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
+            gap: 1.5rem;
         }
 
-        .card {
-            background: var(--card-bg);
-            padding: 2.2rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-color);
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .year, .project-role {
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
-            font-weight: 600;
-        }
-        
-        .card li {
-            color: var(--text-muted);
-            padding-left: 1.2rem;
-        }
-
-        .card li::before {
-            content: '•';
-            color: var(--accent-color);
-        }
-
-        /* --- Project Links (High Visibility Styling for Buttons/Proofs) --- */
-        .project-links {
-            margin-top: 1rem;
-        }
-
-        .project-link {
-            padding: 0.6rem 1.2rem;
-            background: var(--accent-light);
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            text-decoration: none; /* Remove general underline from button links */
-            border-radius: 6px;
-            display: inline-block;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            text-underline-offset: 0;
-            text-decoration: none;
-        }
-        
-        .project-link:hover {
-            background: var(--accent-color);
-            color: #fff;
-            transform: none;
-        }
-        
-        /* Proofs and Details - Made into highly visible accent buttons */
-        .view-full-project, .proof-button, .research-link {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            margin-top: 1.5rem;
-            background: var(--accent-color);
-            color: #fff;
-            text-decoration: none; /* Crucial: Remove text underline from styled buttons */
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-size: 0.88rem;
-            border: 1px solid var(--accent-color);
-            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.2);
-            margin-right: 1rem;
-        }
-        
-        /* FIX: Ensures visited/active buttons retain accent background and white text */
-        .view-full-project:visited, .proof-button:visited, .research-link:visited {
-             color: #fff; 
-             background: var(--accent-color); 
-        }
-
-        .view-full-project:hover, .proof-button:hover, .research-link:hover {
-            background: var(--text-main); /* Change color completely on hover */
-            border-color: var(--text-main);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
-        }
-        
-        /* --- Research Styling (Simplified for consistency) --- */
-        .research-card h3 {
-            font-size: 1.3rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-        }
-        .research-card p {
-            color: var(--text-muted);
-            margin-bottom: 0;
-        }
-
-        /* Skills Tags */
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .skill-category {
-            border: 1px solid var(--border-color);
+        .feature {
+            background: var(--bg-card);
             padding: 1.5rem;
-            border-radius: var(--radius);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
-        .skill-category h3 {
-            color: var(--accent-color);
+
+        .feature h3 {
+            color: var(--accent-green); 
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .code-section {
+            background: #f4f4f4;
+            color: #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .code-section h3 {
+            color: var(--text-main); 
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
-        .skill-tag {
-            display: inline-block;
-            background: var(--accent-light);
-            color: var(--text-main);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            margin: 0.3rem;
+
+        pre {
+            color: #333;
+            background: #f4f4f4;
+            font-family: 'Courier New', monospace;
             font-size: 0.9rem;
-            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
         }
 
-
-        /* Contact links: Made more prominent with hover effect */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 400px;
-            margin: 0 auto;
+        .flow {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
         }
-        .contact-item {
+
+        .flow-steps {
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 1.05rem;
-        }
-        .contact-item a {
-            color: var(--accent-color);
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-        /* FIX: Ensures visited contact links retain accent color */
-        .contact-item a:visited {
-            color: var(--accent-color);
+            flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
-        .contact-item a:hover {
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 2px 4px;
+        .step {
+            background: var(--accent-green);
+            color: var(--bg-light); 
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .arrow {
+            color: var(--text-main); 
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .screenshot-box {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .screenshot-box:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-green);
+        }
+
+        .screenshot-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-main); 
+            font-weight: 600;
+            border-top: 1px solid var(--border);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .metric .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-green); 
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric .label {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .learnings li {
+            background: var(--bg-card);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-green); 
+            color: var(--text-dim);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--border);
+            color: var(--text-main);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* Button Styling */
+        .btn {
+            padding: 1rem 2rem;
+            background: var(--accent-green); 
+            color: var(--bg-light); 
             text-decoration: none;
-            border-radius: 2px;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-green); 
+            box-shadow: 0 4px 10px rgba(26, 60, 52, 0.3); 
+        }
+        
+        /* FIX: Ensure visited buttons retain their primary background and text */
+        .btn:visited {
+            background: var(--accent-green);
+            color: var(--bg-light);
+            border-color: var(--accent-green);
         }
 
+        .btn:hover {
+            background: var(--text-main); 
+            color: var(--bg-light); 
+            border-color: var(--text-main);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(28, 28, 28, 0.4); 
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
         @media (max-width: 768px) {
-            nav {
-                width: 95%;
-                padding: 0.8rem 1.5rem;
-                bottom: 20px; 
-                top: auto;
-            }
-            .nav-links { display: none; } 
-            .logo { margin: 0 auto; }
-            .hero h1 { font-size: 2.8rem; }
-            section { padding: 4rem 1.5rem; }
-            .cta-button { display: block; width: 100%; margin-top: 0.5rem; }
-            .view-full-project, .proof-button, .research-link { 
-                display: block; 
-                width: 100%; 
-                margin-right: 0;
-                margin-top: 0.75rem;
-            }
-            .project-card { 
-                display: flex; 
-                flex-direction: column;
-            }
+            .project-title { font-size: 2.5rem; }
+            .flow-steps { flex-direction: column; }
+            .arrow { transform: rotate(90deg); }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">VA.</div>
+            <div class="logo">VA</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Connect</a></li>
+                <li><a href="/">← Back to Portfolio</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Vishwajeet Shashikant Adkine</h1>
-            <h2>Aspiring AI Engineer & Researcher</h2> 
-            <p>Aspiring to be an AI engineer, I'm passionate about developing scalable, ethical, and accessible artificial intelligence systems. Experienced in leading international tech teams, building AI-integrated applications, and conducting independent research in AI reliability and agri-tech innovation.</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
-            <div class="social-links">
-                <a href="mailto:vishwajeetadkine705@gmail.com" title="Email">📧</a>
-                <a href="https://www.instagram.com/vishwajeet_streminiai/" title="Instagram">📷</a>
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <h1 class="project-title">KhetiAI</h1>
+        <p class="subtitle">AI-Powered Agriculture Platform</p>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="card">
-            <p>I am an aspiring AI engineer and researcher with a passion for creating technology that makes a real difference. My journey has been focused on developing scalable, ethical, and accessible artificial intelligence systems that address real-world challenges.</p>
-            <br>
-            <p>With experience leading multi-member international tech teams, I have successfully built AI-integrated applications and conducted independent research in AI reliability and agri-tech innovation. My work spans from developing practical AI solutions for farmers through KhetiAI to advancing AI safety through research on temporal awareness, self-verification prompting, and prompt injection defense.</p>
-            <br>
-            <p>Currently based in India, I am committed to leveraging artificial intelligence to solve critical problems in agriculture, cybersecurity, and everyday automation, while ensuring these technologies remain accessible and beneficial to all.</p>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="grid">
+        <section>
+            <h2>🚀 Overview</h2>
             <div class="card">
-                <h3>Gokulnath Secondary & Higher Secondary School</h3>
-                <span class="year">Current Studies</span>
-                <ul>
-                    <li>School Topper in Class 11th: 93.17%</li> 
-                    <li>Class 12th expected topper based on previous results</li>
-                </ul>
+                <p>KhetiAI started from a simple observation: farmers in my area struggled with crop diseases but had no quick way to identify or treat them. Having helped farmers at my family's agriculture shop, I saw this problem firsthand.</p>
+                <p>So in June 2025, I started building KhetiAI - a mobile app that uses AI to detect crop diseases instantly. But it became more than that. Farmers also needed help managing budgets, finding equipment to rent, checking weather, and planning their tasks. So we built all of that into one platform.</p>
+                <p>I led a team of 7 people from different countries to build this. The app uses Google's **Gemini 2.5 Flash** AI model, which analyzes crop photos and tells farmers exactly what's wrong and how to fix it. We also added a marketplace where farmers can rent tractors and equipment, a budget tracker, weather forecasts, and a task scheduler.</p>
             </div>
-            <div class="card">
-                <h3>Scottish Academy (CBSE)</h3>
-                <span class="year">Former Student</span>
-                <ul>
-                    <li>Class 10: 85% (Top 5 in English)</li>
-                    <li>Class 9: 92.75%</li>
-                </ul>
-            </div>
-        </div>
-        <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" class="proof-button">View Academic Proofs →</a>
-    </section>
+        </section>
 
-    <section id="honors">
-        <h2 class="section-title">Honors & Achievements</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🏆 IMUN Maths Olympiad</h3>
-                <p>Certificate of Excellence & Letter of Recommendation (2025)</p>
+        <section>
+            <h2>🧠 Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>AI Crop Disease Detection</h3>
+                    <p>Snap a photo of your crop. Our AI tells you the plant type, what disease it has, how severe it is, and exactly what treatment to use</p>
+                </div>
+                <div class="feature">
+                    <h3>Agriculture Chatbot</h3>
+                    <p>Ask the AI anything about farming, soil health, fertilizer ratios, or market prices in your local language. Get instant, reliable answers.</p>
+                </div>
+                <div class="feature">
+                    <h3>Budget Management</h3>
+                    <p>Track your income and expenses daily, monthly, or yearly. See where your money goes and plan better</p>
+                </div>
+                <div class="feature">
+                    <h3>Equipment Marketplace</h3>
+                    <p>Need a tractor or harvester? Browse local listings to buy or rent farming equipment</p>
+                </div>
+                <div class="feature">
+                    <h3>Weather Forecasting</h3>
+                    <p>Get real-time weather data - temperature, humidity, wind speed. Plan your farming activities accordingly</p>
+                </div>
+                <div class="feature">
+                    <h3>Task Scheduler</h3>
+                    <p>Set reminders for watering, fertilizing, harvesting. Never miss an important farming task</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>🌟 School Connect AI Olympiad</h3>
-                <p>Top International Ranker</p>
-            </div>
-        </div>
-        <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates →</a>
-    </section>
+        </section>
 
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>💻 Programming</h3>
-                <div>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">C++</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>🌐 Web Development</h3>
-                <div>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">Firebase</span>
-                    <span class="skill-tag">Cloudflare Workers</span>
-                    <span class="skill-tag">Vercel</span>
-                    <span class="skill-tag">REST APIs</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>🤖 AI & Tools</h3>
-                <div>
-                    <span class="skill-tag">Google Gemini API</span>
-                    <span class="skill-tag">Prompt Engineering</span>
-                    <span class="skill-tag">Safe Browsing API</span>
-                    <span class="skill-tag">WHOIS</span>
-                    <span class="skill-tag">NLP</span>
-                    <span class="skill-tag">ML Basics</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>🛠️ Other Tools</h3>
-                <div>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Canva</span>
-                    <span class="skill-tag">SEO</span>
-                    <span class="skill-tag">Google Search Console</span>
-                    <span class="skill-tag">Blogger</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>🎯 Soft Skills</h3>
-                <div>
-                    <span class="skill-tag">Leadership</span>
-                    <span class="skill-tag">Problem Solving</span>
-                    <span class="skill-tag">Research</span>
-                    <span class="skill-tag">Team Management</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Major Projects & Initiatives</h2>
-        <div class="grid">
-            <div class="project-card card">
-                <div>
-                    <h3>KhetiAI</h3>
-                    <span class="project-role">Founder | June 2025 – Present</span>
-                    <p>AI-powered digital agriculture platform for farmers, focused on integrating crop guidance, marketplace, weather insights, and task scheduling.</p>
-                    <ul>
-                        <li>Led a 7-member global team (operations, development, marketing).</li>
-                        <li>Built MVP with weather forecast, budget management, and rental marketplace.</li>
-                        <li>Designed stable backend for AI-crop disease predictor & clean UI hosted on Vercel.</li>
-                        <li>The AI-Powered crop disease predictor is available on the website and will be soon added to the app, along with the eCommerce marketplace and task scheduler.</li>
-                        <li>Reached 5.5K+ users on social media, projected 20K by Dec 2025.</li>
-                        <li>Coordinated with Flutter developers to build the app MVP and add features.</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="project-link">🌐 Website</a> 
-                        <a href="https://www.instagram.com/khetiplus.ai/" class="project-link">📷 Instagram</a>
-                    </div>
-                </div>
-                <a href="https://my-portfolio-delta-weld-18.vercel.app/" class="view-full-project">📖 View Full Project Details →</a>
-                <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="proof-button">View KhetiAI Proofs →</a>
-            </div>
-
-            <div class="project-card card">
-                <div>
-                    <h3>Stremini AI</h3>
-                    <span class="project-role">Co-Founder & Lead Developer | Aug 2025 – Present</span>
-                    <p>Startup focused on building self-tuned AI systems for everyday life automation. The team consisted of 20 total members with 10 developers.</p>
-                    <ul>
-                        <li>Managed the website and the app development as the Lead Developer.</li>
-                        <li>Developed a Website Trust Score System using WHOIS & Safe Browsing APIs.</li>
-                        <li>Extracted 30,000+ vulnerabilities from NVD for scam detection backend.</li>
-                        <li>Created a Gemini 2.5 Flash API chatbot hosted on Cloudflare Worker.</li>
-                        <li>I developed the Cloudflare Worker API endpoint for features like the Chatbot, automation, AI-powered keyboard, and Scam detection.</li>
-                        <li>Managed branding, SEO (score 78), and GSC indexing.</li>
-                        <li>Coordinated with other developers to build the app MVP within the deadline.</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://www.stremini.site/" class="project-link">🌐 Website</a>
-                        <a href="https://www.instagram.com/streminiai/" class="project-link">📷 Instagram</a>
-                    </div>
-                </div>
-                <a href="https://streminiai-protfolio.vercel.app/" class="view-full-project">📖 View Full Project Details →</a>
-                <a href="https://drive.google.com/drive/folders/1_B6cbjjJ0xu3G0eOa7IHKpuEn4Xradfe?usp=sharing" class="proof-button">View Stremini AI Proofs →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="research">
-        <h2 class="section-title">Research & Publications</h2>
-        <div class="grid">
+        <section>
+            <h2>🧩 Technical Details</h2>
             
-            <div class="card research-card">
-                <h3>⏳ Temporal Awareness in LLMs</h3>
-                <span class="project-role">AI Reliability & Safety</span>
-                <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Implemented in the Stremini-AI app.</p>
+            <div class="code-section">
+                <h3>Gemini API Integration</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">I built a **Cloudflare Worker** to handle the AI requests. The tricky part was handling rate limits from Google's API. Here's how I implemented **retry logic with exponential backoff**:</p>
+<pre>let apiResponse;
+for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            apiResponse = await response.json();
+            break;
+        }
+
+        if (response.status === 429 || response.status >= 500) {
+            if (attempt < MAX_RETRIES - 1) {
+                const delay = getExponentialBackoffDelay(attempt);
+                await new Promise(resolve => setTimeout(resolve, delay));
+                continue;
+            }
+        }
+    } catch (networkError) {
+        if (attempt < MAX_RETRIES - 1) {
+            const delay = getExponentialBackoffDelay(attempt);
+            await new Promise(resolve => setTimeout(resolve, delay));
+            continue;
+        }
+        throw networkError;
+    }
+}</pre>
             </div>
 
-            <div class="card research-card">
-                <h3>✅ Self-Verification Prompting</h3>
-                <span class="project-role">AI Reliability & Safety</span>
-                <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
-            </div>
-            
-            <div class="card research-card">
-                <h3>🛡️ Prompt Injection Defense</h3>
-                <span class="project-role">AI Reliability & Safety</span>
-                <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
-            </div>
-            
-            <div class="card research-card">
-                <h3>🌾 Problems Faced by Indian Farmers</h3>
-                <span class="project-role">Agri-Tech Research</span>
-                <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
+            <div class="code-section">
+                <h3>Structured JSON Responses</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">The AI needs to return consistent data every time. I enforce this using a **JSON schema** that guarantees we always get plant type, disease name, severity, and treatment steps:</p>
+<pre>const responseSchema = {
+    type: "OBJECT",
+    properties: {
+        "plant_type": {
+            "type": "STRING",
+            "description": "Type of plant (e.g., 'Tomato', 'Rose')"
+        },
+        "disease_name": {
+            "type": "STRING",
+            "description": "Disease name or 'Healthy'"
+        },
+        "severity": {
+            "type": "STRING",
+            "description": "'Low', 'Medium', or 'High'"
+        },
+        "treatment_steps": {
+            "type": "ARRAY",
+            "items": { "type": "STRING" }
+        }
+    },
+    required: ["plant_type", "disease_name", "severity", "treatment_steps"]
+};</pre>
             </div>
 
-            <div class="card research-card">
-                <h3>📚 Interdisciplinary JEE E-book (WIP)</h3>
-                <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
-                <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
-            </div>
-
-        </div>
-        <div style="text-align: center;">
-            <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 View Full Research Blog →</a>
-        </div>
-    </section>
-
-    <section id="leadership">
-        <h2 class="section-title">Leadership & Management Experience</h2>
-        <div class="grid">
             <div class="card">
-                <h3>🎉 Event Organizer - School Farewell</h3>
-                <p>Led a 20-member team managing comprehensive event logistics for 200+ attendees. Awarded "Most Beautiful Organization" for exceptional planning and execution.</p>
-            </div>
-            
-            <div class="card">
-                <h3>👥 Team Lead - Stremini AI</h3>
-                <p>Oversaw technical milestones, recruitment processes, and global team coordination across multiple time zones. Managed a diverse team of developers and operations personnel.</p>
-            </div>
-            
-            <div class="card">
-                <h3>🌾 Family Business Support - Agriculture</h3>
-                <p>Managed agricultural shop operations and provided hands-on assistance to farmers in applying for government subsidies, gaining practical insights that inspired KhetiAI development.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem;">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect!
-            </p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📧</span>
-                    <a href="mailto:vishwajeetadkine705@gmail.com">vishwajeetadkine705@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📍</span>
-                    <span>India</span>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📷</span>
-                    <a href="https://www.instagram.com/vishwajeet_streminiai/">@vishwajeet_streminiai</a>
+                <h3 style="color: var(--accent-green); margin-bottom: 1rem;">Tech Stack</h3>
+                <div class="tech-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">Cloudflare Workers</span>
+                    <span class="tag">Gemini 2.5 Flash</span>
+                    <span class="tag">Supabase Auth</span>
+                    <span class="tag">Weather API</span>
+                    <span class="tag">Vercel</span>
                 </div>
             </div>
+        </section>
+
+        <section>
+            <h2>📊 Data Pipeline</h2>
+            <div class="flow">
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Here's how the disease detection works from start to finish:</p>
+                
+                <div class="flow-steps">
+                    <div class="step">User Upload</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Cloudflare Worker</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Gemini API</div>
+                    <span class="arrow">→</span>
+                    <div class="step">JSON Response</div>
+                    <span class="arrow">→</span>
+                    <div class="step">Flutter App</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📱 App Screenshots</h2>
+            <div class="screenshots">
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/App%20welcome%20screen.jpg" alt="Welcome Screen">
+                    <div class="screenshot-label">Welcome Screen</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/Weather%20forecast%20feature.jpg" alt="Weather">
+                    <div class="screenshot-label">Weather Forecast</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/Budget%20management%20feature%20ss%203.jpg" alt="Budget">
+                    <div class="screenshot-label">Budget Tracking</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/plant%20disease%20ai.jpg" alt="Disease Detection">
+                    <div class="screenshot-label">AI Disease Detection</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/Rental%20marketplace.jpg" alt="Marketplace">
+                    <div class="screenshot-label">Equipment Marketplace</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/task%20scheduler.jpg" alt="Tasks">
+                    <div class="screenshot-label">Task Scheduler</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/Account%20information%20screen.jpg" alt="Profile">
+                    <div class="screenshot-label">User Profile</div>
+                </div>
+                <div class="screenshot-box">
+                    <img src="https://983111.github.io/my-portfolio/Settings%20screen.jpg" alt="Settings">
+                    <div class="screenshot-label">Settings</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎥 Demo Video</h2>
+            <div class="card">
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/12-85fACzZrOu8bsQ7XZNZIJJ_9b_ffbu/preview" allow="autoplay"></iframe>
+                </div>
+                <p style="margin-top: 1rem;">Full walkthrough showing disease detection, marketplace browsing, weather updates, and budget management</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📈 Impact</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="number">6K+</span>
+                    <span class="label">Instagram Reach</span>
+                </div>
+                <div class="metric">
+                    <span class="number">7</span>
+                    <span class="label">Team Members</span>
+                </div>
+                <div class="metric">
+                    <span class="number">Early 2026</span>
+                    <span class="label">Launch Date</span>
+                </div>
+                <div class="metric">
+                    <span class="number">MVP</span>
+                    <span class="label">Live</span>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 2rem;">
+                <p>We're getting regular feedback from farmers in **Maharashtra and Telangana** who are testing the app. They're telling us what works and what doesn't, which helps us improve before the full launch.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>💡 What I Learned</h2>
+            <ul class="learnings">
+                <li>Managing a remote team across time zones is harder than I thought. **Clear communication** and realistic deadlines became essential</li>
+                <li>Working with developers from different countries taught me how to adapt to different work styles and cultures</li>
+                <li>I learned **Flutter** by working closely with our mobile developers and asking tons of questions</li>
+                <li>Hardest part: convincing good developers to work for revenue share instead of upfront payment. Had to really **sell the vision**</li>
+                <li>Most of us were students juggling classes and development. **Time management** became critical</li>
+                <li>Biggest lesson: **just start building**. Don't wait for everything to be perfect. Things work out when you put in the time</li>
+                <li>You have to believe in your idea and protect it, but also stay open to feedback</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔮 What's Next</h2>
+            <div class="card">
+                <p><strong>AI Fertilizer Recommendations:</strong> Tell farmers which fertilizers to use based on their soil and crops</p>
+            </div>
+            <div class="card">
+                <p><strong>Government Form Automation:</strong> Auto-fill subsidy forms for farmers so they don't have to deal with paperwork</p>
+            </div>
+            <div class="card">
+                <p><strong>Agriculture News:</strong> Daily updates on farming policies, weather alerts, and market prices</p>
+            </div>
+            <div class="card">
+                <p><strong>More Languages:</strong> Add support for regional Indian languages beyond English and Hindi</p>
+            </div>
+            <div class="card">
+                <p><strong>Offline Mode:</strong> Let farmers use basic features even without internet</p>
+            </div>
+        </section>
+
+        <div class="links">
+            <a href="https://khetiai-website-git-main-vishwajeets-projects-d63f8c7a.vercel.app/" class="btn">Live Website</a>
+            <a href="https://www.instagram.com/khetiplus.ai/" class="btn">Instagram</a>
+            <a href="https://drive.google.com/drive/folders/1lPXfE_FFP1Xw5pR3nTlz_kG16-vaeqe1?usp=sharing" class="btn">View Proofs</a>
+            <a href="https://drive.google.com/uc?export=download&id=1OulEQD1p9swolZzoK1ZIdOzY4LMmgR8W" class="btn">App Repo</a>
+            <a href="https://drive.google.com/uc?export=download&id=1pF7QTcYHOeAsRRKzKGBELuXlOtP0bUE3" class="btn">Website Repo</a>
         </div>
-    </section>
+    </div>
 </body>
 </html>

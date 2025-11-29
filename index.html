@@ -10,8 +10,8 @@
             --bg-card: #1C1C1C;
             --text-main: #FFFFFF;
             --text-dim: #B0B0B0;
-            --blue: #00A3FF;
-            --green: #39FF14;
+            --blue: #00A3FF;      /* Primary Accent (Blue) */
+            --green: #39FF14;     /* Secondary Accent (Neon Green) */
             --border: #333;
         }
 
@@ -28,6 +28,33 @@
             line-height: 1.6;
         }
 
+        /* --- Link Visibility Fixes --- */
+        a {
+            color: var(--blue);
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        
+        /* FIX: Ensure visited links retain color */
+        a:visited {
+            color: var(--blue);
+        }
+
+        a:hover {
+            color: var(--green);
+        }
+
+        /* Nav links are subtle */
+        .nav-links a {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* --- Navigation Bar --- */
         nav {
             position: fixed;
             top: 0;
@@ -58,17 +85,6 @@
             display: flex;
             gap: 2rem;
             list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-main);
         }
 
         .container {
@@ -287,18 +303,29 @@
             flex-wrap: wrap;
         }
 
+        /* Button Styling */
         .btn {
             padding: 1rem 2rem;
             background: var(--blue);
-            color: var(--bg-dark);
+            color: var(--bg-dark); /* Dark text for contrast */
             text-decoration: none;
             border-radius: 6px;
             font-weight: 700;
             transition: all 0.3s;
+            border: 2px solid var(--blue); /* Ensure border is set */
+        }
+        
+        /* FIX: Ensure visited buttons retain their primary background and dark text */
+        .btn:visited {
+            background: var(--blue);
+            color: var(--bg-dark);
+            border-color: var(--blue);
         }
 
         .btn:hover {
             background: var(--green);
+            color: var(--bg-dark); /* Dark text on hover for contrast */
+            border-color: var(--green);
             transform: translateY(-3px);
         }
 
@@ -345,7 +372,7 @@
             <div class="card">
                 <p>KhetiAI started from a simple observation: farmers in my area struggled with crop diseases but had no quick way to identify or treat them. Having helped farmers at my family's agriculture shop, I saw this problem firsthand.</p>
                 <p>So in June 2025, I started building KhetiAI - a mobile app that uses AI to detect crop diseases instantly. But it became more than that. Farmers also needed help managing budgets, finding equipment to rent, checking weather, and planning their tasks. So we built all of that into one platform.</p>
-                <p>I led a team of 7 people from different countries to build this. The app uses Google's Gemini 2.5 Flash AI model, which analyzes crop photos and tells farmers exactly what's wrong and how to fix it. We also added a marketplace where farmers can rent tractors and equipment, a budget tracker, weather forecasts, and a task scheduler.</p>
+                <p>I led a team of 7 people from different countries to build this. The app uses Google's **Gemini 2.5 Flash** AI model, which analyzes crop photos and tells farmers exactly what's wrong and how to fix it. We also added a marketplace where farmers can rent tractors and equipment, a budget tracker, weather forecasts, and a task scheduler.</p>
             </div>
         </section>
 
@@ -384,7 +411,7 @@
             
             <div class="code-section">
                 <h3>Gemini API Integration</h3>
-                <p style="color: var(--text-dim); margin-bottom: 1rem;">I built a Cloudflare Worker to handle the AI requests. The tricky part was handling rate limits from Google's API. Here's how I implemented retry logic with exponential backoff:</p>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">I built a **Cloudflare Worker** to handle the AI requests. The tricky part was handling rate limits from Google's API. Here's how I implemented **retry logic with exponential backoff**:</p>
 <pre>let apiResponse;
 for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
@@ -419,7 +446,7 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
 
             <div class="code-section">
                 <h3>Structured JSON Responses</h3>
-                <p style="color: var(--text-dim); margin-bottom: 1rem;">The AI needs to return consistent data every time. I enforce this using a JSON schema that guarantees we always get plant type, disease name, severity, and treatment steps:</p>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">The AI needs to return consistent data every time. I enforce this using a **JSON schema** that guarantees we always get plant type, disease name, severity, and treatment steps:</p>
 <pre>const responseSchema = {
     type: "OBJECT",
     properties: {
@@ -462,6 +489,7 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
             <h2>📊 Data Pipeline</h2>
             <div class="flow">
                 <p style="color: var(--text-dim); margin-bottom: 1rem;">Here's how the disease detection works from start to finish:</p>
+                
                 <div class="flow-steps">
                     <div class="step">User Upload</div>
                     <span class="arrow">→</span>
@@ -545,19 +573,19 @@ for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
                 </div>
             </div>
             <div class="card" style="margin-top: 2rem;">
-                <p>We're getting regular feedback from farmers in Maharashtra and Telangana who are testing the app. They're telling us what works and what doesn't, which helps us improve before the full launch.</p>
+                <p>We're getting regular feedback from farmers in **Maharashtra and Telangana** who are testing the app. They're telling us what works and what doesn't, which helps us improve before the full launch.</p>
             </div>
         </section>
 
         <section>
             <h2>💡 What I Learned</h2>
             <ul class="learnings">
-                <li>Managing a remote team across time zones is harder than I thought. Clear communication and realistic deadlines became essential</li>
+                <li>Managing a remote team across time zones is harder than I thought. **Clear communication** and realistic deadlines became essential</li>
                 <li>Working with developers from different countries taught me how to adapt to different work styles and cultures</li>
-                <li>I learned Flutter by working closely with our mobile developers and asking tons of questions</li>
-                <li>Hardest part: convincing good developers to work for revenue share instead of upfront payment. Had to really sell the vision</li>
-                <li>Most of us were students juggling classes and development. Time management became critical</li>
-                <li>Biggest lesson: just start building. Don't wait for everything to be perfect. Things work out when you put in the time</li>
+                <li>I learned **Flutter** by working closely with our mobile developers and asking tons of questions</li>
+                <li>Hardest part: convincing good developers to work for revenue share instead of upfront payment. Had to really **sell the vision**</li>
+                <li>Most of us were students juggling classes and development. **Time management** became critical</li>
+                <li>Biggest lesson: **just start building**. Don't wait for everything to be perfect. Things work out when you put in the time</li>
                 <li>You have to believe in your idea and protect it, but also stay open to feedback</li>
             </ul>
         </section>

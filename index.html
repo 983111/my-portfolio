@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishwajeet Adkine - AI Engineer & Researcher</title>
+    <title>Vishwajeet Adkine - Aspiring AI Engineer & Researcher</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -273,7 +273,7 @@
             text-underline-offset: 0;
             text-decoration: none;
         }
-
+        
         .project-link:hover {
             background: var(--accent-color);
             color: #fff;
@@ -311,20 +311,19 @@
         }
         
         /* --- Research Styling --- */
-        .research-paper h4 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            color: var(--text-main);
-        }
-        
-        .research-paper ul li {
+        .card.research-paper ul li {
             padding-left: 0;
             list-style: none;
         }
-        .research-paper ul li::before {
+        .card.research-paper ul li::before {
             content: none;
         }
-
+        .card.research-paper h4 {
+            font-size: 1.15rem;
+            margin-top: 0;
+            margin-bottom: 0.25rem;
+            color: var(--text-main);
+        }
 
         /* Skills Tags */
         .skills-container {
@@ -439,8 +438,6 @@
             </div>
         </div>
     </section>
-    
-    <hr>
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
@@ -452,8 +449,6 @@
             <p>Currently based in India, I am committed to leveraging artificial intelligence to solve critical problems in agriculture, cybersecurity, and everyday automation, while ensuring these technologies remain accessible and beneficial to all.</p>
         </div>
     </section>
-
-    <hr>
 
     <section id="education">
         <h2 class="section-title">Education</h2>
@@ -478,8 +473,6 @@
         <a href="https://drive.google.com/drive/folders/1lSu3zSzK5nUoyVcBfjg5gVVGa4lw37Xp?usp=sharing" class="proof-button">View Academic Proofs →</a>
     </section>
 
-    <hr>
-
     <section id="honors">
         <h2 class="section-title">Honors & Achievements</h2>
         <div class="grid">
@@ -494,8 +487,6 @@
         </div>
         <a href="https://drive.google.com/drive/folders/1mg0SHKM6rXX0trGhEEkcIn_9B6d5ovsP?usp=sharing" class="proof-button">View Honors & Certificates →</a>
     </section>
-
-    <hr>
 
     <section id="skills">
         <h2 class="section-title">Technical Skills</h2>
@@ -552,8 +543,6 @@
         </div>
     </section>
 
-    <hr>
-
     <section id="projects">
         <h2 class="section-title">Major Projects & Initiatives</h2>
         <div class="grid">
@@ -604,32 +593,34 @@
         </div>
     </section>
 
-    <hr>
-
     <section id="research">
         <h2 class="section-title">Research & Publications</h2>
         <div class="grid">
             <div class="card research-paper">
                 <h3>🔒 AI Reliability & Safety</h3>
                 
-                <p style="font-weight: 500; color: var(--text-main); margin-top: 1rem;">Key Papers & Methodologies:</p>
+                <p style="font-weight: 500; color: var(--text-main); margin-top: 1rem; margin-bottom: 0.5rem;">Key Papers & Methodologies:</p>
                 
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-top: 1.5rem;">
-                        <h4>Improving Temporal Awareness in Large Language Models</h4>
-                        <span class="project-role" style="margin-bottom: 0.5rem;">Methodology: API Injection & Prompt Grounding</span>
-                        <p style="margin-bottom: 0;">Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Successfully implemented in the Stremini-AI app.</p>
-                        <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
+                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Improving Temporal Awareness in LLMs</h4>
+                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Methodology: API Injection & Prompt Grounding</span>
+                        <p style="margin-bottom: 0;">Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Implemented in the Stremini-AI app.</p>
                     </li>
+                    
+                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
+                    
                     <li style="margin-top: 0;">
-                        <h4>Self-Verification Prompting for Reliable Chatbots</h4>
-                        <span class="project-role" style="margin-bottom: 0.5rem;">Methodology: Two-Step Self-Checking System</span>
-                        <p style="margin-bottom: 0;">Developed a two-step self-checking system designed to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
-                        <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
+                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Self-Verification Prompting for Reliable Chatbots</h4>
+                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Methodology: Two-Step Self-Checking System</span>
+                        <p style="margin-bottom: 0;">Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
                     </li>
+                    
+                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
+                    
                     <li style="margin-top: 0;">
-                        <h4>Prompt Injection Defense using Context Sanitization</h4>
-                        <span class="project-role" style="margin-bottom: 0.5rem;">Methodology: Semantic Filter for Jailbreak Prevention</span>
+                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Prompt Injection Defense using Context Sanitization</h4>
+                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Methodology: Semantic Filter for Jailbreak Prevention</span>
                         <p style="margin-bottom: 0;">Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions.</p>
                     </li>
                 </ul>
@@ -639,18 +630,20 @@
             <div class="card research-paper">
                 <h3>🌱 Agri-Tech & Interdisciplinary Research</h3>
                 
-                <p style="font-weight: 500; color: var(--text-main); margin-top: 1rem;">Publications & Works in Progress:</p>
+                <p style="font-weight: 500; color: var(--text-main); margin-top: 1rem; margin-bottom: 0.5rem;">Publications & Works in Progress:</p>
                 
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-top: 1.5rem;">
-                        <h4>Core Problems Faced by Indian Farmers: Region-Specific Analysis and AI Solutions</h4>
-                        <span class="project-role" style="margin-bottom: 0.5rem;">Status: Published</span>
+                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Core Problems Faced by Indian Farmers</h4>
+                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Status: Published - Informed KhetiAI Features</span>
                         <p style="margin-bottom: 0;">Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
-                        <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
                     </li>
+                    
+                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
+                    
                     <li style="margin-top: 0;">
-                        <h4>80+ Page E-book on Interdisciplinary JEE Concepts</h4>
-                        <span class="project-role" style="margin-bottom: 0.5rem;">Status: Expected Completion Nov 30, 2025</span>
+                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">E-book on Interdisciplinary JEE Concepts</h4>
+                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Status: Expected Completion Nov 30, 2025</span>
                         <p style="margin-bottom: 0;">Exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
                     </li>
                 </ul>
@@ -658,8 +651,6 @@
             </div>
         </div>
     </section>
-
-    <hr>
 
     <section id="leadership">
         <h2 class="section-title">Leadership & Management Experience</h2>
@@ -680,8 +671,6 @@
             </div>
         </div>
     </section>
-
-    <hr>
 
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>

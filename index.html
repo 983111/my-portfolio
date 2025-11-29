@@ -310,19 +310,15 @@
             box-shadow: 0 6px 15px rgba(28, 28, 28, 0.3);
         }
         
-        /* --- Research Styling --- */
-        .card.research-paper ul li {
-            padding-left: 0;
-            list-style: none;
-        }
-        .card.research-paper ul li::before {
-            content: none;
-        }
-        .card.research-paper h4 {
-            font-size: 1.15rem;
-            margin-top: 0;
-            margin-bottom: 0.25rem;
+        /* --- Research Styling (Simplified for consistency) --- */
+        .research-card h3 {
+            font-size: 1.3rem;
             color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+        .research-card p {
+            color: var(--text-muted);
+            margin-bottom: 0;
         }
 
         /* Skills Tags */
@@ -596,59 +592,40 @@
     <section id="research">
         <h2 class="section-title">Research & Publications</h2>
         <div class="grid">
-            <div class="card research-paper">
-                <h3>🔒 AI Reliability & Safety</h3>
-                
-                <p style="font-weight: 500; color: var(--text-main); margin-top: 1rem; margin-bottom: 0.5rem;">Key Papers & Methodologies:</p>
-                
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-top: 1.5rem;">
-                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Improving Temporal Awareness in LLMs</h4>
-                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Methodology: API Injection & Prompt Grounding</span>
-                        <p style="margin-bottom: 0;">Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Implemented in the Stremini-AI app.</p>
-                    </li>
-                    
-                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
-                    
-                    <li style="margin-top: 0;">
-                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Self-Verification Prompting for Reliable Chatbots</h4>
-                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Methodology: Two-Step Self-Checking System</span>
-                        <p style="margin-bottom: 0;">Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
-                    </li>
-                    
-                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
-                    
-                    <li style="margin-top: 0;">
-                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Prompt Injection Defense using Context Sanitization</h4>
-                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Methodology: Semantic Filter for Jailbreak Prevention</span>
-                        <p style="margin-bottom: 0;">Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions.</p>
-                    </li>
-                </ul>
-                <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 Read Full AI Research →</a>
+            
+            <div class="card research-card">
+                <h3>⏳ Temporal Awareness in LLMs</h3>
+                <span class="project-role">AI Reliability & Safety</span>
+                <p>Created real-time prompt-grounding via API injection to fix AI's inability to recognize or report the correct current date/time. Implemented in the Stremini-AI app.</p>
             </div>
 
-            <div class="card research-paper">
-                <h3>🌱 Agri-Tech & Interdisciplinary Research</h3>
-                
-                <p style="font-weight: 500; color: var(--text-main); margin-top: 1rem; margin-bottom: 0.5rem;">Publications & Works in Progress:</p>
-                
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-top: 1.5rem;">
-                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Core Problems Faced by Indian Farmers</h4>
-                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Status: Published - Informed KhetiAI Features</span>
-                        <p style="margin-bottom: 0;">Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
-                    </li>
-                    
-                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px dashed var(--border-color);">
-                    
-                    <li style="margin-top: 0;">
-                        <h4 style="font-size: 1.15rem; margin-bottom: 0.25rem;">E-book on Interdisciplinary JEE Concepts</h4>
-                        <span class="project-role" style="margin-top: 0; margin-bottom: 0.5rem;">Status: Expected Completion Nov 30, 2025</span>
-                        <p style="margin-bottom: 0;">Exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
-                    </li>
-                </ul>
-                <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 View Agri-Tech Blog →</a>
+            <div class="card research-card">
+                <h3>✅ Self-Verification Prompting</h3>
+                <span class="project-role">AI Reliability & Safety</span>
+                <p>Developed a two-step system to reduce hallucinations in AI responses through comprehensive self-verification prompting methodology.</p>
             </div>
+            
+            <div class="card research-card">
+                <h3>🛡️ Prompt Injection Defense</h3>
+                <span class="project-role">AI Reliability & Safety</span>
+                <p>Proposed a semantic filter for jailbreak prevention to protect against attacks where prompts override system instructions (Context Sanitization).</p>
+            </div>
+            
+            <div class="card research-card">
+                <h3>🌾 Problems Faced by Indian Farmers</h3>
+                <span class="project-role">Agri-Tech Research</span>
+                <p>Comprehensive study examining real challenges faced by farmers across India's regions, which directly informed the core features of the KhetiAI digital agriculture app.</p>
+            </div>
+
+            <div class="card research-card">
+                <h3>📚 Interdisciplinary JEE E-book (WIP)</h3>
+                <span class="project-role">Interdisciplinary Research | Expected Nov 2025</span>
+                <p>E-book exploring links between Physics, Mathematics, and AI for competitive exam preparation.</p>
+            </div>
+
+        </div>
+        <div style="text-align: center;">
+            <a href="https://vishwajeetadkine.blogspot.com/" class="research-link">📄 View Full Research Blog →</a>
         </div>
     </section>
 
